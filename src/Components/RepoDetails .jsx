@@ -3,7 +3,9 @@ import {
   CardHeader,
   CardBody,
   Typography,
+  Button,
 } from "@material-tailwind/react";
+import { useHistory } from "react-router-dom";
 
 const RepoDeatils = () => {
   const selectedRepo = localStorage.getItem("selectedRepo");
@@ -16,11 +18,14 @@ const RepoDeatils = () => {
     default_branch,
     owner: { login, avatar_url },
   } = parsedValue || {};
-
+  const history = useHistory();
   const createdAt = Date(created_at)?.split("G")[0];
+  const handleOnClick = () => {
+     history.push("/")
+  }
 
   return (
-    <div className="w-full flex justify-center mt-2 h-full">
+    <div className="w-full flex justify-center  h-full">
       <Card className="w-96 rounded shadow-2xl  flex-col items-center justify-center">
         <CardBody className="rounded flex flex-col gap-2 flex-wrap justify-center items-center">
           <CardHeader className="w-96">
@@ -53,7 +58,7 @@ const RepoDeatils = () => {
               className="font-medium cursor-pointer hover:text-blue-500 hover:transition"
               textGradient>
               <a target="_blank" href={html_url}>
-                Know More About this project
+                Know More About this project 
               </a>
             </Typography>
             <Typography
@@ -66,6 +71,7 @@ const RepoDeatils = () => {
                 View More Repos of {login}
               </a>
             </Typography>
+            <Button variant="outlined" onClick={handleOnClick} className="bg-black text-white w-32 p-2 hover:bg-gray-800 hover:transition mx-auto">Back To Home</Button>
           </div>
         </CardBody>
       </Card>
