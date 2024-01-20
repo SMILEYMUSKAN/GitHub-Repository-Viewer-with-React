@@ -25,7 +25,7 @@ const RepoDeatils = () => {
   }
 
   return (
-    <div className="w-full flex justify-center  h-full">
+    <div className="w-full flex justify-center h-5/6">
       <Card className="w-96 rounded shadow-2xl  flex-col items-center justify-center">
         <CardBody className="rounded flex flex-col gap-2 flex-wrap justify-center items-center">
           <CardHeader className="w-96">
@@ -33,11 +33,11 @@ const RepoDeatils = () => {
               src={avatar_url}
               className="rounded mx-auto"
               alt=""
-              width="300"
+              width="250"
             />
           </CardHeader>
 
-          <Typography variant="h4" color="blue-gray" className="mb-2">
+          <Typography variant="h4" color="blue-gray">
             {login}
           </Typography>
           <div className="flex flex-col gap-2">
@@ -49,6 +49,10 @@ const RepoDeatils = () => {
             </Typography>
             <Typography className="font-medium" textGradient>
               Visibility : {visibility}
+            
+            </Typography>
+            <Typography className="font-medium" textGradient>
+              Language : {parsedValue.language}
             </Typography>
             <Typography className="font-medium" textGradient>
               default_branch : {default_branch}
