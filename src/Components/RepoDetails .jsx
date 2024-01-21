@@ -52,7 +52,7 @@ const RepoDeatils = () => {
             
             </Typography>
             <Typography className="font-medium" textGradient>
-              Language : {parsedValue.language}
+              Language : {parsedValue.language || "none"} 
             </Typography>
             <Typography className="font-medium" textGradient>
               default_branch : {default_branch}
